@@ -2,7 +2,16 @@
   font-weight: bold;
 }
 
-.review-list-item {
+.container {
+  width: 100%;
+}
+
+.form-register {
   display: flex;
   flex-direction: column;
+  width: 33%;
+}
+
+.form-register > * {
+  margin: 8px;
 }

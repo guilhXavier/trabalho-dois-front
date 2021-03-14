@@ -1,4 +1,4 @@
-import { getAllReviews, registerReview } from './api'
+import { getAllReviews } from './api'
 import './styles/style.css'
 import { Pageable } from './types/pageable'
 import { Review } from './types/review'
@@ -51,6 +51,7 @@ function Main() {
   })
 
   elem.classList.add('text-bold')
+  elem.classList.add('container')
 
   return elem
 }
