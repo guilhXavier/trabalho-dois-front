@@ -1,6 +1,5 @@
 import { getAllReviews } from './api'
 import './styles/style.css'
-import { Pageable } from './types/pageable'
 import { Review } from './types/review'
 
 const fetch = async () => {

@@ -53,10 +53,8 @@ const submitRegister = async (author, content, rating, imgUrl) => {
   const x = await registerReview(author, content, rating, imgUrl)
 
   if (x.status === 200) {
-    console.log('here', 1)
     return 'Ok!'
   }
-  console.log('here', 2)
   return 'Oops! :('
 }
 

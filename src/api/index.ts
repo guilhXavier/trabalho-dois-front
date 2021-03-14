@@ -48,4 +48,30 @@ const getAllReviews = (
     }))
     .catch((err: AxiosError) => err.response)
 
-export { registerReview, getAllReviews }
+const getReviewsById = (id: number): Promise<AxiosResponse<Review>> =>
+  axios
+    .get(REQUEST_URL + '/resenha/buscar/id/' + id)
+    .then((x: AxiosResponse<any>) => ({
+      ...x,
+      data: convertResenhaToReview(x.data),
+    }))
+    .catch((err: AxiosError) => err.response)
+
+const getReviewsByKeyWord = (
+  keyword: string,
+  pageNumber: number,
+): Promise<AxiosResponse<Pageable<Review>>> =>
+  axios
+    .get(
+      REQUEST_URL +
+        '/resenha/buscar/palavraChave/' +
+        keyword +
+        `?pageNumber=${pageNumber}&pageSize=1&paged=true`,
+    )
+    .then((x: AxiosResponse<any>) => ({
+      ...x,
+      data: convertPagedReviews(x.data),
+    }))
+    .catch((err: AxiosError) => err.response)
+
+export { registerReview, getAllReviews, getReviewsById, getReviewsByKeyWord }
