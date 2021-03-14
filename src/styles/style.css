@@ -1,0 +1,8 @@
+.text-bold {
+  font-weight: bold;
+}
+
+.review-list-item {
+  display: flex;
+  flex-direction: column;
+}
